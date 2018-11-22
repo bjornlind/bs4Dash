@@ -983,7 +983,7 @@ bs4Stars <- function(maxstar = 5, grade, status = "warning") {
 #'       "It uses utility classes for typography and spacing 
 #'       to space content out within the larger container.",
 #'       status = "primary",
-#'       btn_name = 'Read more'
+#'       btn_name = 'Read more',
 #'       href = "http://www.google.fr"
 #'       )
 #'      )
