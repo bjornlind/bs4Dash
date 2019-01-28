@@ -1380,7 +1380,7 @@ attachmentBlock <- function(..., src = NULL, title = NULL, title_url = NULL) {
 #' @export
 descriptionBlock <- function(number = NULL, number_color = NULL, number_icon = NULL,
                              header = NULL, text = NULL, right_border = TRUE,
-                             margin_bottom = FALSE) {
+                             margin_bottom = FALSE, vertical = TRUE) {
   
   cl <- "description-block"
   if (isTRUE(right_border)) cl <- paste0(cl, " border-right")
@@ -1396,7 +1396,11 @@ descriptionBlock <- function(number = NULL, number_color = NULL, number_icon = N
       number,
       if (!is.null(number_icon)) shiny::tags$i(class = number_icon)
     ),
-    shiny::tags$h5(class = "description-header", header),
+    if(vertical){
+      shiny::tags$h5(class = "description-header", header)
+    } else {
+      shiny::tags$span(class = "description-header", header)
+    },
     shiny::tags$span(class = "description-text", text)
   )
 }

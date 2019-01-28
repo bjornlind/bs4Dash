@@ -6,7 +6,7 @@
 \usage{
 descriptionBlock(number = NULL, number_color = NULL,
   number_icon = NULL, header = NULL, text = NULL,
-  right_border = TRUE, margin_bottom = FALSE)
+  right_border = TRUE, margin_bottom = FALSE, vertical = TRUE)
 }
 \arguments{
 \item{number}{Any number.}
