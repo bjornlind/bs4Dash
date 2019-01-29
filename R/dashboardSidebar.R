@@ -12,6 +12,7 @@
 #' @param src Sidebar brand image.
 #' @param elevation Sidebar elevation. 4 by default (until 5).
 #' @param opacity Sidebar opacity. From 0 to 1. 0.8 by default.
+#' @param img_sircle Sidebar logo round or square
 # #' @param width Sidebar width. 250 px by default.
 #'
 #' @author David Granjon, \email{dgranjon@@ymail.com}
@@ -19,7 +20,7 @@
 #' @export
 bs4DashSidebar <- function(..., title = NULL, skin = "dark", status = "primary",
                                 brandColor = NULL, url = NULL, src = NULL,
-                                elevation = 4, opacity = .8) {
+                                elevation = 4, opacity = .8, img_sircle = TRUE) {
 
   # brand logo
   brandTag <- if (!is.null(title)) {
@@ -28,7 +29,7 @@ bs4DashSidebar <- function(..., title = NULL, skin = "dark", status = "primary",
       href = url,
       shiny::tags$img(
         src = src,
-        class = "brand-image img-circle elevation-3",
+        class = ifelse(img_sircle, "brand-image img-circle elevation-3", "brand-image elevation-3"),
         style = paste0("opacity: ", opacity)
       ),
       shiny::tags$span(class = "brand-text font-weight-light", title)
